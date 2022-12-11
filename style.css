@@ -1,4 +1,51 @@
-.cell{
-    min-width: 50px !important;
-    min-height: 50px !important;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: 150px;
+    background-color: rgb(99, 99, 99);
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-direction: column;
+    color: white;
+
+}
+.grid{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: grey;
+}
+
+.grid div {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(160, 160, 160);
+}
+.checked {
+    background-color: red;
+}
+.bomb {
+    
+    background-color: gray;
+}
+.bombview {
+    background-color: blue;
+}
+
+.flag{
+    opacity: 0;
+    background-color: yellow;
+}
+
+.flagview{
+    opacity: 100;
+    background-color: yellow;
 }
