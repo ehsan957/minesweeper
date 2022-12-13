@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded',() => {
     let flags = 0;
     let squares = [];
     let isGameOver = false;
+    const timer = document.getElementById("timer")
+    let isStart = false
+    let minutes = 0;
+    let seconds = 0; 
     
     //creat board
 
@@ -114,7 +118,10 @@ document.addEventListener('DOMContentLoaded',() => {
 
     //click function
     function click(square) {
-
+        if(!isStart){
+            isStart = true
+            startstopwatch();
+        }
         let currentId = square.id;
         // game over
         if (isGameOver)
@@ -231,5 +238,17 @@ document.addEventListener('DOMContentLoaded',() => {
             isGameOver = true;
             }
         }
+    }
+    function add() {
+        seconds++;
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+        }
+        timer.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+        startstopwatch() 
+    }
+    function startstopwatch() {
+        t = setTimeout(add, 1000);
     }
 });
